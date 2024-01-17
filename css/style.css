@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #bbffc5, #11a640);
+    color: #fff;
+    position: relative;
+}
+
+.container{
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(235, 0, 255, 0.11);
+    border-radius: 30px;
+    padding: 25px;
+    margin: 0 auto;
+    text-shadow: 0 0 6px #fff;
+    box-shadow: 0 0 10px rgba(235, 0, 255, 0.11);
+    
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        width: 90%;
+    }
+    #phone-number::-webkit-input-placeholder{
+        font-size:6vw;
+    }
+    .inner-box {
+        flex-direction: row; /* Yatay düzende sıralama */
+        justify-content: center; /* Elemanları yatayda ortala */
+    }
+    
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #f41b75;
+    border-radius: 5px;
+    left: -50px;
+    top: -50px;
+    z-index: -1;
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #419aff;
+    border-radius: 50%;
+    right: -50px;
+    bottom: -50px;
+    z-index: -1;
+}
+
+.inner-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    backdrop-filter: blur(40px);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+}
+
+.txt{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#phone-number{
+    position: relative;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 80%;
+    padding: 10px;
+}
+
+.number-error {
+    color: red;
+}
+
+#wp {
+    position: absolute;
+    bottom: 5%;
+    left: 10vw;
+    right: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(82, 79, 82, 0.11);
+    border-radius: 30px;
+    padding: 2%;
+}
+
+#wp a {
+    position: relative;
+}
+
+#url {
+    text-decoration: none;
+    color: #091e0c;
+    font-size: 1.5rem;
+    margin: 5%;
+}
+

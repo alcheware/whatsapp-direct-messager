@@ -7,7 +7,7 @@ function on_keyup(phone_number_element, link_element) {
     let input = phone_number_element.value;
     let invalid = false;
     let error_regex = /[^+0-9]+/;
-    error_regex.test(input) || input === "" ? invalid = true : invalid = false;
+    error_regex.test(input) ? invalid = true : invalid = false;
 
     if (invalid) {
         phone_number_element.setAttribute("class", "number-error");
