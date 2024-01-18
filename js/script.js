@@ -1,29 +1,29 @@
-function form_url(phone_number) {
+function formUrl(phoneNumber) {
     let url = "https://wa.me/";
-    return phone_number.includes("+") ? url + phone_number : url + "+" + phone_number;
+    return phoneNumber.includes("+") ? url + phoneNumber : url + "+" + phoneNumber;
 }
 
-function on_keyup(phone_number_element, link_element) {
-    let input = phone_number_element.value;
+function onKeyUp(phoneNumberElement, linkElement) {
+    let input = phoneNumberElement.value;
     let invalid = false;
-    let error_regex = /[^+0-9]+/;
-    error_regex.test(input) ? invalid = true : invalid = false;
+    let errorRegex = /[^+0-9]+/;
+    errorRegex.test(input) || input === "" ? invalid = true : invalid = false;
 
     if (invalid) {
-        phone_number_element.setAttribute("class", "number-error");
-        link_element.setAttribute("href", "#");
-        link_element.innerHTML = "Invalid phone number";
+        phoneNumberElement.setAttribute("class", "number-error");
+        linkElement.setAttribute("href", "#");
+        linkElement.innerHTML = "Invalid phone number";
         return;
     }
 
-    phone_number_element.setAttribute("class", "number-ok");
-    let url = form_url(input);
-    link_element.setAttribute("href", url);
-    link_element.innerHTML = url;
+    phoneNumberElement.setAttribute("class", "number-ok");
+    let url = formUrl(input);
+    linkElement.setAttribute("href", url);
+    linkElement.innerHTML = url;
 }
 
 window.onload = () => {
     let input = document.getElementById("phone-number");
-    let url_element = document.getElementById("url");
-    input.addEventListener("keyup", (e) => {on_keyup(input, url_element)});
+    let urlElement = document.getElementById("url");
+    input.addEventListener("keyup", (e) => {onKeyUp(input, urlElement)});
 }
